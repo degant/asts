@@ -1,0 +1,173 @@
+/* ASTS Tracker — Bloomberg Dark Theme with Space Accents */
+
+:root {
+  /* Base colors */
+  --bg-primary: #0a0e17;
+  --bg-secondary: #111827;
+  --bg-card: #1a1f2e;
+  --bg-card-hover: #242b3d;
+  --bg-input: #1e2536;
+  
+  /* Text */
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --text-accent: #60a5fa;
+  
+  /* Accent — space blue + satellite gold */
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+  --accent-gold: #f59e0b;
+  --accent-cyan: #22d3ee;
+  
+  /* Status */
+  --status-operational: #22c55e;
+  --status-manifested: #3b82f6;
+  --status-planned: #818cf8;
+  --status-lost: #ef4444;
+  --status-grounded: #f97316;
+  --status-decommissioned: #6b7280;
+  
+  /* Severity */
+  --risk-critical: #ef4444;
+  --risk-high: #f97316;
+  --risk-medium: #facc15;
+  --risk-low: #22c55e;
+  
+  /* Catalyst types */
+  --catalyst-launch: #3b82f6;
+  --catalyst-earnings: #f59e0b;
+  --catalyst-commercial: #22c55e;
+  --catalyst-regulatory: #8b5cf6;
+  --catalyst-deployment: #22d3ee;
+  --catalyst-failure: #ef4444;
+  --catalyst-partnership: #ec4899;
+  --catalyst-milestone: #a78bfa;
+  
+  /* Borders */
+  --border-primary: #374151;
+  --border-secondary: #1f2937;
+  
+  /* Spacing */
+  --section-gap: 2.5rem;
+  --card-radius: 12px;
+  --card-padding: 1.5rem;
+  
+  /* Typography */
+  --font-mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-primary); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Card base */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--card-radius);
+  padding: var(--card-padding);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.08);
+}
+
+/* Status badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge--operational { background: rgba(34,197,94,0.15); color: var(--status-operational); }
+.badge--manifested { background: rgba(59,130,246,0.15); color: var(--status-manifested); }
+.badge--planned { background: rgba(129,140,248,0.15); color: var(--status-planned); }
+.badge--lost { background: rgba(239,68,68,0.15); color: var(--status-lost); }
+.badge--grounded { background: rgba(249,115,22,0.15); color: var(--status-grounded); }
+.badge--decommissioned { background: rgba(107,114,128,0.15); color: var(--status-decommissioned); }
+
+/* Risk badges */
+.risk--critical { background: rgba(239,68,68,0.15); color: var(--risk-critical); }
+.risk--high { background: rgba(249,115,22,0.15); color: var(--risk-high); }
+.risk--medium { background: rgba(250,204,21,0.15); color: var(--risk-medium); }
+.risk--low { background: rgba(34,197,94,0.15); color: var(--risk-low); }
+
+/* Section layout */
+.section {
+  margin-bottom: var(--section-gap);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-secondary);
+}
+
+.section-title svg {
+  color: var(--accent-primary);
+  flex-shrink: 0;
+}
+
+/* Grid layouts */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+
+@media (max-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+
+/* Utility */
+.mono { font-family: var(--font-mono); }
+.text-green { color: var(--status-operational); }
+.text-red { color: var(--status-lost); }
+.text-gold { color: var(--accent-gold); }
+.text-blue { color: var(--accent-primary); }
+.text-muted { color: var(--text-muted); }
+.text-secondary { color: var(--text-secondary); }
