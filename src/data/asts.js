@@ -113,6 +113,7 @@ export const asts = {
         celestrak: 'https://celestrak.org/NORAD/elements/gp.php?CATNR=53807&FORMAT=TLE',
         gunter: 'https://space.skyrocket.de/doc_sdat/bluewalker-3.htm',
         launch: 'https://www.spacex.com/launches/mission/?missionId=sl-5-12',
+        nextspaceflight: 'https://www.nextspaceflight.com/launches/details/6291/',
       },
       notes: 'Prototype satellite. Proved direct-to-cell concept with every world first. Visible to naked eye at mag 0.4. Decommissioned after test campaign.',
       source: 'https://space.skyrocket.de/doc_sdat/bluewalker-3.htm',
@@ -200,6 +201,7 @@ export const asts = {
         gunter: 'https://space.skyrocket.de/doc_sdat/bluebird-2.htm',
         astsats: 'https://www.astsats.com/',
         keeptrack: 'https://keeptrack.space/deep-dive/spacemobile-006',
+        nextspaceflight: 'https://www.nextspaceflight.com/launches/details/7689/',
       },
       notes: 'First Block 2 satellite. FM1 prototype mass 6,100 kg (heavier than production 5,830 kg). Largest commercial comms array ever in LEO. Array successfully unfolded Feb 10 2026. 10x bandwidth of Block 1. Uses FPGA-based processing (AST5000 ASIC integrated starting BB7+).',
       source: 'https://space.skyrocket.de/doc_sdat/bluebird-2.htm',
@@ -224,6 +226,7 @@ export const asts = {
       links: {
         gunter: 'https://space.skyrocket.de/doc_sdat/bluebird-2.htm',
         supercluster: 'https://www.supercluster.com/launches/bluebird-block-2',
+        nextspaceflight: 'https://www.nextspaceflight.com/launches/details/7690/',
       },
       notes: 'LOST. 3rd New Glenn flight. Stage 2 failure left sat in unrecoverable orbit. Production mass 5,830 kg (lighter than FM1). Fully insured.',
       source: 'https://space.skyrocket.de/doc_sdat/bluebird-2.htm',
