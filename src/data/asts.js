@@ -490,8 +490,7 @@ export const asts = {
     { name: 'Telefonica', country: 'Spain/LatAm', subscribers: '~380M', agreement: 'MoU', status: 'Planned', revenueModel: 'TBD', spectrum: 'Telefonica spectrum', notes: 'European + Latin American coverage.', tier: 2 },
     { name: 'TELUS', country: 'Canada', subscribers: '~18M', agreement: 'Equity Stake + Commercial', status: 'Late 2026 target', revenueModel: 'Equity investment + rev share', tier: 1, sources: ['https://rallies.ai/news/telus-to-acquire-equity-stake-in-ast-spacemobile-launching-satellite-broadband-by-2026'] },
     { name: 'Google (Alphabet)', country: 'Global', subscribers: '3B+ Android devices', agreement: 'Strategic Investment + Android Integration', status: 'Active', revenueModel: 'Equity investor + tech partner', tier: 1, sources: ['https://www.businesswire.com/news/home/20240118463570/en/'] },
-    { name: '2degrees', country: 'New Zealand', subscribers: '~1.5M', agreement: 'Commercial Agreement', status: 'Planned', revenueModel: 'Revenue share', spectrum: '2degrees spectrum', notes: 'New Zealand market. NZ RSM has approved D2D sub-licensing for MNOs.', tier: 3 },
-    { name: 'Others (50+ MNOs)', country: 'Global', subscribers: '~2.8B total addressable', agreement: 'Various MoUs/Agreements', status: 'Pipeline', revenueModel: 'Wholesale/Revenue share', spectrum: 'Partner MNO spectrum', notes: 'Total global MNO partner network covering ~2.8 billion subscribers.', tier: 3 },
+    { name: 'Others (50+ MNOs)', country: 'Global',subscribers: '~2.8B total addressable', agreement: 'Various MoUs/Agreements', status: 'Pipeline', revenueModel: 'Wholesale/Revenue share', spectrum: 'Partner MNO spectrum', notes: 'Total global MNO partner network covering ~2.8 billion subscribers.', tier: 3 },
   ],
 
   // ─── Competitors ───
@@ -654,7 +653,7 @@ export const asts = {
       { market: 'Japan', status: 'in-progress', detail: 'Via Rakuten Mobile partnership' },
       { market: 'Canada', status: 'in-progress', detail: 'ISED coordination with Bell' },
       { market: 'Australia', status: 'early-stage', detail: 'ACMA coordination with Telstra' },
-      { market: 'New Zealand', status: 'approved', detail: 'RSM confirmed D2D sub-licensing regime. MNOs (Spark, OneNZ, 2degrees) can create D2D licenses since Oct 2023. Source: rsm.govt.nz/licensing/direct-to-device-licensing' },
+      { market: 'New Zealand', status: 'framework-ready', detail: 'RSM D2D regulatory framework in place since Oct 2023. MNOs (Spark, OneNZ, 2degrees) can create D2D sub-licenses — no ASTS-specific partner announced yet. Source: rsm.govt.nz/licensing/direct-to-device-licensing' },
       { market: 'India', status: 'early-stage', detail: 'Regulatory discussion' },
       { market: 'Middle East', status: 'in-progress', detail: 'Via stc Group' },
     ],
