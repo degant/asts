@@ -142,6 +142,9 @@ function SatDetailPanel({ sat, onClose }) {
               {sat.links?.supercluster && (
                 <a href={sat.links.supercluster} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-primary)', textDecoration: 'none', padding: '3px 8px', background: 'var(--bg-secondary)', borderRadius: 4 }}>🚀 Supercluster</a>
               )}
+              {sat.links?.nextspaceflight && (
+                <a href={sat.links.nextspaceflight} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-primary)', textDecoration: 'none', padding: '3px 8px', background: 'var(--bg-secondary)', borderRadius: 4 }}>🚀 NextSpaceflight</a>
+              )}
               {sat.links?.launch && (
                 <a href={sat.links.launch} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-primary)', textDecoration: 'none', padding: '3px 8px', background: 'var(--bg-secondary)', borderRadius: 4 }}>🚀 Launch Info</a>
               )}
