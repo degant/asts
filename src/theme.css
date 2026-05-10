@@ -171,3 +171,59 @@ a:hover {
 .text-blue { color: var(--accent-primary); }
 .text-muted { color: var(--text-muted); }
 .text-secondary { color: var(--text-secondary); }
+
+/* ─── Mobile Responsive ─── */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: 1rem !important;
+  }
+
+  .section-title {
+    font-size: 1rem !important;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .card {
+    padding: 0.75rem !important;
+  }
+
+  /* Hero header adjustments */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.5rem !important;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  table {
+    font-size: 0.7rem !important;
+  }
+
+  table th, table td {
+    padding: 4px 6px !important;
+  }
+}

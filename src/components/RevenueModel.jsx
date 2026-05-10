@@ -10,13 +10,12 @@ const SCENARIO_COLORS = {
 export default function RevenueModel({ data }) {
   const { revenueModel: rm } = data;
 
-  const scenarioData = rm.scenarioAnalysis.map(s => ({
-    name: s.scenario,
-    revenue: parseFloat(s.annualRevenue.replace(/[^0-9.]/g, '')),
-    penetration: s.penetration,
-    arpu: s.arpu,
-    notes: s.notes,
-  }));
+  const scenarioData = rm.scenarioAnalysis.map(s => {
+    const raw = s.annualRevenue;
+    let revenue = parseFloat(raw.replace(/[^0-9.]/g, ''));
+    if (raw.includes('M')) revenue = revenue / 1000;
+    return { name: s.scenario, revenue, penetration: s.penetration, arpu: s.arpu, notes: s.notes };
+  });
 
   return (
     <div className="section">

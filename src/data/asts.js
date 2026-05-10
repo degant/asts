@@ -59,7 +59,7 @@ export const asts = {
 
   // ─── Constellation Status ───
   constellation: {
-    inOrbit: 6,  // BB1-6 operational (BB7 lost)
+    inOrbit: 7,  // BW3 + BB1-5 + BB6 (BB7 lost)
     authorized: 248,  // FCC authorization Apr 2026
     ultimateGoal: 356,
     targetEnd2026: { min: 45, max: 60 },
@@ -93,7 +93,7 @@ export const asts = {
   satellites: [
     // Prototype
     {
-      id: 'BW3', name: 'BlueWalker 3', block: 'Prototype', status: 'decommissioned',
+      id: 'BW3', name: 'BlueWalker 3', block: 'Prototype', status: 'operational',
       launchDate: '2022-09-10', vehicle: 'SpaceX Falcon 9', site: 'Cape Canaveral SLC-40',
       cospar: '2022-111AL', noradId: 53807,
       mass_kg: 1500, arraySize_sqft: 693, arraySize_sqm: 64, arrayDiameter_m: 10,
@@ -115,7 +115,7 @@ export const asts = {
         launch: 'https://www.spacex.com/launches/mission/?missionId=sl-5-12',
         nextspaceflight: 'https://www.nextspaceflight.com/launches/details/6291/',
       },
-      notes: 'Prototype satellite. Proved direct-to-cell concept with every world first. Visible to naked eye at mag 0.4. Decommissioned after test campaign.',
+      notes: 'Prototype satellite — still operational and in orbit (confirmed by CEO Abel Avellan on earnings call). Proved direct-to-cell concept with every world first. Visible to naked eye at mag 0.4. Continues to serve as an in-orbit test platform.',
       source: 'https://space.skyrocket.de/doc_sdat/bluewalker-3.htm',
     },
     // Block 1
@@ -203,7 +203,7 @@ export const asts = {
         keeptrack: 'https://keeptrack.space/deep-dive/spacemobile-006',
         nextspaceflight: 'https://www.nextspaceflight.com/launches/details/7689/',
       },
-      notes: 'First Block 2 satellite. FM1 prototype mass 6,100 kg (heavier than production 5,830 kg). Largest commercial comms array ever in LEO. Array successfully unfolded Feb 10 2026. 10x bandwidth of Block 1. Uses FPGA-based processing (AST5000 ASIC integrated starting BB7+).',
+      notes: 'First Block 2 satellite. FM1 prototype mass 6,100 kg (heavier than production 5,830 kg) — FM1 carried additional test instrumentation, redundant systems, and pre-production engineering margins. Production units (BB7+) optimized to 5,830 kg. Largest commercial comms array ever in LEO. Array successfully unfolded Feb 10 2026. 10x bandwidth of Block 1. Uses FPGA-based processing (AST5000 ASIC integrated starting BB7+).',
       source: 'https://space.skyrocket.de/doc_sdat/bluebird-2.htm',
     },
     {
@@ -228,7 +228,7 @@ export const asts = {
         supercluster: 'https://www.supercluster.com/launches/bluebird-block-2',
         nextspaceflight: 'https://www.nextspaceflight.com/launches/details/7690/',
       },
-      notes: 'LOST. 3rd New Glenn flight. Stage 2 failure left sat in unrecoverable orbit. Production mass 5,830 kg (lighter than FM1). Fully insured.',
+      notes: 'LOST. 3rd New Glenn flight. Stage 2 failure left sat in unrecoverable orbit. Production mass 5,830 kg (optimized from FM1 6,100 kg by removing test instrumentation and engineering margins). Fully insured.',
       source: 'https://space.skyrocket.de/doc_sdat/bluebird-2.htm',
     },
     // Upcoming — Manifested
@@ -490,6 +490,7 @@ export const asts = {
     { name: 'Telefonica', country: 'Spain/LatAm', subscribers: '~380M', agreement: 'MoU', status: 'Planned', revenueModel: 'TBD', spectrum: 'Telefonica spectrum', notes: 'European + Latin American coverage.', tier: 2 },
     { name: 'TELUS', country: 'Canada', subscribers: '~18M', agreement: 'Equity Stake + Commercial', status: 'Late 2026 target', revenueModel: 'Equity investment + rev share', tier: 1, sources: ['https://rallies.ai/news/telus-to-acquire-equity-stake-in-ast-spacemobile-launching-satellite-broadband-by-2026'] },
     { name: 'Google (Alphabet)', country: 'Global', subscribers: '3B+ Android devices', agreement: 'Strategic Investment + Android Integration', status: 'Active', revenueModel: 'Equity investor + tech partner', tier: 1, sources: ['https://www.businesswire.com/news/home/20240118463570/en/'] },
+    { name: '2degrees', country: 'New Zealand', subscribers: '~1.5M', agreement: 'Commercial Agreement', status: 'Planned', revenueModel: 'Revenue share', spectrum: '2degrees spectrum', notes: 'New Zealand market. NZ RSM has approved D2D sub-licensing for MNOs.', tier: 3 },
     { name: 'Others (50+ MNOs)', country: 'Global', subscribers: '~2.8B total addressable', agreement: 'Various MoUs/Agreements', status: 'Pipeline', revenueModel: 'Wholesale/Revenue share', spectrum: 'Partner MNO spectrum', notes: 'Total global MNO partner network covering ~2.8 billion subscribers.', tier: 3 },
   ],
 
@@ -653,6 +654,7 @@ export const asts = {
       { market: 'Japan', status: 'in-progress', detail: 'Via Rakuten Mobile partnership' },
       { market: 'Canada', status: 'in-progress', detail: 'ISED coordination with Bell' },
       { market: 'Australia', status: 'early-stage', detail: 'ACMA coordination with Telstra' },
+      { market: 'New Zealand', status: 'approved', detail: 'RSM confirmed D2D sub-licensing regime. MNOs (Spark, OneNZ, 2degrees) can create D2D licenses since Oct 2023. Source: rsm.govt.nz/licensing/direct-to-device-licensing' },
       { market: 'India', status: 'early-stage', detail: 'Regulatory discussion' },
       { market: 'Middle East', status: 'in-progress', detail: 'Via stc Group' },
     ],
@@ -908,8 +910,13 @@ export const asts = {
     ],
     community: [
       { name: 'r/ASTSpaceMobile', url: 'https://www.reddit.com/r/ASTSpaceMobile/', platform: 'Reddit', members: '~48K+', description: 'Main community hub — launch threads, DD posts, financial models, coverage simulations' },
-      { name: 'r/Spacemobilers', url: 'https://www.reddit.com/r/Spacemobilers/', platform: 'Reddit', members: '~2K', description: 'Secondary community for ASTS investors' },
-      { name: 'StockTwits $ASTS', url: 'https://stocktwits.com/symbol/ASTS', platform: 'StockTwits', description: 'Real-time sentiment and chatter' },
+      { name: 'StockTwits $ASTS',url: 'https://stocktwits.com/symbol/ASTS', platform: 'StockTwits', description: 'Real-time sentiment and chatter' },
+    ],
+    valuationCalculators: [
+      { name: 'Gryden ASTS Model', url: 'https://www.gryden.se/asts/index.php', description: 'Interactive valuation model with adjustable assumptions' },
+      { name: 'Jiahan Liu ASTS Model', url: 'https://jiahanliu.github.io/ASTS-Model/', description: 'DCF and scenario-based valuation calculator' },
+      { name: 'Transhumanica ASTS Model', url: 'https://transhumanica.com/asts/model', description: 'Community-built financial model with revenue projections' },
+      { name: 'StockMeetups ASTS', url: 'https://stockmeetups.github.io/ASTS/', description: 'Valuation scenarios and sensitivity analysis' },
     ],
     keyPeople: [
       {

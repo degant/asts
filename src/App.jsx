@@ -60,7 +60,7 @@ export default function App() {
   return (
     <div style={{ display: 'flex', minHeight: '100vh' }}>
       {/* Sidebar nav */}
-      <nav style={{
+      <nav className="sidebar" style={{
         position: 'fixed',
         top: 0,
         left: 0,
@@ -109,7 +109,7 @@ export default function App() {
       </nav>
 
       {/* Main content */}
-      <main style={{ marginLeft: 200, flex: 1, padding: '2rem 3rem', maxWidth: 1200 }}>
+      <main className="main-content" style={{ marginLeft: 200, flex: 1, padding: '2rem 3rem', maxWidth: 1200 }}>
         <div id="overview"><CompanyHeader data={asts} /></div>
         <div id="constellation"><ConstellationTracker data={asts} /></div>
         <div id="launches"><LaunchTimeline data={asts} /></div>

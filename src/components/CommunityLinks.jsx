@@ -171,6 +171,20 @@ export default function CommunityLinks({ data }) {
         ))}
       </div>
 
+      {/* Valuation Calculators */}
+      {links.valuationCalculators?.length > 0 && (
+        <>
+          <h3 style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: 6 }}>
+            📊 ASTS Valuation Calculators
+          </h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '0.5rem', marginBottom: '1.5rem' }}>
+            {links.valuationCalculators.map((c, i) => (
+              <LinkCard key={i} name={c.name} url={c.url} description={c.description} icon="🧮" />
+            ))}
+          </div>
+        </>
+      )}
+
       {/* GitHub Projects */}
       {links.github?.length > 0 && (
         <>
