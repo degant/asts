@@ -36,6 +36,7 @@ const SECTIONS = [
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('overview');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -57,10 +58,33 @@ export default function App() {
     return () => observer.disconnect();
   }, []);
 
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setMobileMenuOpen(false);
+  };
+
   return (
     <div style={{ display: 'flex', minHeight: '100vh' }}>
+      {/* Mobile hamburger button */}
+      <button
+        className="mobile-menu-btn"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        aria-label="Toggle navigation"
+      >
+        <span style={{ fontSize: '1.2rem' }}>{mobileMenuOpen ? '✕' : '☰'}</span>
+      </button>
+
+      {/* Backdrop for mobile menu */}
+      {mobileMenuOpen && (
+        <div
+          className="mobile-backdrop"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Sidebar nav */}
-      <nav className="sidebar" style={{
+      <nav className={`sidebar ${mobileMenuOpen ? 'sidebar-open' : ''}`} style={{
         position: 'fixed',
         top: 0,
         left: 0,
@@ -84,10 +108,7 @@ export default function App() {
             <a
               key={id}
               href={`#${id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-              }}
+              onClick={(e) => handleNavClick(e, id)}
               style={{
                 display: 'block',
                 padding: '6px 1rem',
