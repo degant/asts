@@ -15,6 +15,7 @@ import RegulatoryTracker from './components/RegulatoryTracker';
 import RevenueModel from './components/RevenueModel';
 import OwnershipChart from './components/OwnershipChart';
 import CommunityLinks from './components/CommunityLinks';
+import Citations from './components/Citations';
 
 const SECTIONS = [
   { id: 'overview', label: 'Overview' },
@@ -32,6 +33,7 @@ const SECTIONS = [
   { id: 'regulatory', label: 'Regulatory' },
   { id: 'risks', label: 'Risks' },
   { id: 'links', label: 'Links & Community' },
+  { id: 'references', label: 'References' },
 ];
 
 export default function App() {
@@ -146,6 +148,7 @@ export default function App() {
         <div id="regulatory"><RegulatoryTracker data={asts} /></div>
         <div id="risks"><RiskMatrix data={asts} /></div>
         <div id="links"><CommunityLinks data={asts} /></div>
+        <div id="references"><Citations citations={asts.citations} /></div>
       </main>
     </div>
   );
